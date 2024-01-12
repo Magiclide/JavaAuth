@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+# Configuration for 'dev' profile
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 321654987aA@
+    url: jdbc:mysql://localhost:3306/jwt_security
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 36b62e2b314824c81b80
+            client-secret: ed0f6ba3d813f1bdc69f8c498418fdc2e31a8bce
+          google:
+            client-id: 531064494794-c3l4k71umh14m173olbr0c3qqcig3qre.apps.googleusercontent.com
+            client-secret: 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
+         
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
